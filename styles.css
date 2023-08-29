@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+nav {
+    padding: 10px 20px;
+    width: 100%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#logo img {
+    width: 40px;
+    height: auto;
+}
+
+.content-center {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#palette {
+    position: fixed;
+    /* Making the palette fixed */
+    top: 50%;
+    /* Centering the palette vertically */
+    left: 50%;
+    /* Centering the palette horizontally */
+    transform: translate(-50%, -50%);
+    /* Adjusting for the palette's own dimensions */
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    position: fixed;
+    /* Making the button fixed */
+    top: calc(50% + 160px);
+    /* 160px is roughly half the palette height (assuming 5 colors of 300px each and some gap). Adjust accordingly. */
+    left: 50%;
+    /* Centering the button horizontally */
+    transform: translateX(-50%);
+    /* Adjusting for the button's own dimensions */
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    /* To ensure it's above other elements */
+}
+
+.color-box {
+    width: 150px;
+    height: 300px;
+    border: 1px dashed #ccc;
+    /* Dashed border for empty boxes */
+}
